@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos Express</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Pedidos Express</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-4 text-primary">Bienvenido a Pedidos Express</h1>
+            <p class="lead">Tu solución confiable para gestionar pedidos en línea de manera rápida y segura.</p>
+        </div>
+    </div>
+
+    <!-- Servicios Section -->
+    <div id="servicios" class="container py-5">
+        <h2 class="text-center mb-4">Nuestros Servicios</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h4>Gestión de Pedidos</h4>
+                <p>Organiza tus pedidos en línea con un sistema fácil de usar.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Seguimiento en Tiempo Real</h4>
+                <p>Sigue tus entregas con actualizaciones instantáneas.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Soporte 24/7</h4>
+                <p>Estamos aquí para ayudarte en cualquier momento del día.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacto Section -->
+    <div id="contacto" class="bg-primary text-white py-5 text-center">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes preguntas? Envíanos un mensaje y te responderemos lo más pronto posible.</p>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Usuario</label>
+                            <input type="text" id="username" class="form-control" placeholder="Ingresa tu usuario">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" class="form-control" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <button type="button" class="btn btn-primary w-100 mb-2" onclick="login()">Iniciar Sesión</button>
+                        <button type="button" class="btn btn-secondary w-100" onclick="register()">Regístrate</button>
+                    </form>
+                    <p id="message" class="text-center mt-3 text-danger"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
