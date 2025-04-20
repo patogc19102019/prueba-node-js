@@ -28,9 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contacto">Contacto</a>
                     </li>
-                    <li class="nav-item">
-                        <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-                    </li>
+                    <li class="nav-item" id="navbarUser"></li>
                 </ul>
             </div>
         </div>
@@ -90,13 +88,37 @@
                             <input type="password" id="password" class="form-control" placeholder="Ingresa tu contraseña">
                         </div>
                         <button type="button" class="btn btn-primary w-100 mb-2" onclick="login()">Iniciar Sesión</button>
-                        <button type="button" class="btn btn-secondary w-100" onclick="register()">Regístrate</button>
+                        <button type="button" class="btn btn-secondary w-100" onclick="redirectToRegister()">Regístrate</button>
                     </form>
                     <p id="message" class="text-center mt-3 text-danger"></p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Script para manejar usuario logueado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const username = localStorage.getItem('username');
+            const navElement = document.getElementById('navbarUser');
+
+            if (username) {
+                navElement.innerHTML = `
+                    <span class="nav-link">${username}</span>
+                    <button class="btn btn-light btn-sm" onclick="logout()">Cerrar sesión</button>
+                `;
+            } else {
+                navElement.innerHTML = `
+                    <button class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                `;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('username');
+            window.location.href = '/index.html';
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
